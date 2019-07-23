@@ -1,6 +1,16 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import colors from '../../styles/colors';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
 
 export const Button = styled.button`
   background: ${colors.white};
@@ -16,6 +26,11 @@ export const Button = styled.button`
   text-align: left;
   transition: background-color 0.25s ease-in-out, box-shadow 0.3s ease-in-out;
   width: 100%;
+
+  ${() =>
+    css`
+      animation: ${fadeIn} 1.4s forwards 1;
+    `}
 
   &:hover {
     background-color: ${colors.niagara};
@@ -58,6 +73,11 @@ export const LinkElement = styled(Link)`
   text-decoration: none;
   transition: background-color 0.25s ease-in-out, box-shadow 0.3s ease-in-out;
   width: 100%;
+
+  ${() =>
+    css`
+      animation: ${fadeIn} 1.4s forwards 1;
+    `}
 
   &:hover {
     background-color: ${colors.niagara};

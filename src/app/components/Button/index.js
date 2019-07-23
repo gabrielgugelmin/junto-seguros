@@ -23,17 +23,17 @@ export const ButtonLink = ({ text, to, children, color, disabled }) => (
 
 Button.propTypes = {
   color: PropTypes.string,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  disabled: PropTypes.bool,
 };
 
 ButtonLink.propTypes = {
   color: PropTypes.string,
+  disabled: PropTypes.bool,
   text: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
-  disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {

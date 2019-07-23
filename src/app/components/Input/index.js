@@ -22,7 +22,7 @@ export default class Input extends Component {
     const successClass = success ? 'success' : '';
 
     return (
-      <FormControl className={`${errorClass} ${successClass}`}>
+      <FormControl className={`${errorClass} ${successClass} form__control`}>
         <Label>{label}</Label>
         <InputElement
           mask={mask}

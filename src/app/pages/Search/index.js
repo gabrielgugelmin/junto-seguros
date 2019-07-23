@@ -40,28 +40,38 @@ export default class Search extends Component {
     }
   };
 
+  handleClick = () => {
+    console.log('Finalizado!');
+  };
+
   render() {
     const { hasError, success } = this.state;
 
     return (
       <Container>
         <Header
-          title="Nova cotação"
-          subtitle="#0980"
-          photoSrc="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6"
           alt="Foto do(a) usuário(a)"
+          photoSrc="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6"
+          subtitle="#0980"
+          title="Nova cotação"
         />
         <Content>
           <Step number="1" title="Buscar por CNPJ ou empresa" />
           <Input
-            label="CNPJ / Empresa"
-            mask="00.000.000/0000-00"
             handleChange={this.handleChange}
             hasError={hasError}
+            label="CNPJ / Empresa"
+            mask="00.000.000/0000-00"
             success={success}
           />
           <Footer>
-            <Button text="OK" color="green" disabled={!success}>
+            <Button
+              color="green"
+              disabled={!success}
+              onClick={this.handleClick}
+              text="OK"
+              type="button"
+            >
               <MdArrowForward />
             </Button>
           </Footer>

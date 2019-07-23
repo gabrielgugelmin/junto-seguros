@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const Background = styled.div`
   background: linear-gradient(
@@ -7,6 +7,30 @@ export const Background = styled.div`
     rgba(141, 131, 238, 1) 100%
   );
   height: 100%;
+`;
+
+const animateTitle = keyframes`
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const animateP = keyframes`
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 `;
 
 export const Content = styled.main`
@@ -22,10 +46,41 @@ export const Content = styled.main`
   a {
     margin-top: 64px;
   }
+
+  p {
+    ${() =>
+      css`
+        animation: ${animateP} 1.4s forwards 1;
+      `}
+  }
+
+  h1 {
+    ${() =>
+      css`
+        animation: ${animateTitle} 1s forwards 1;
+      `}
+  }
+`;
+
+const animateIcon = keyframes`
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 `;
 
 export const Icon = styled.i`
   display: block;
   margin-bottom: 40px;
   font-size: 28px;
+
+  ${() =>
+    css`
+      animation: ${animateIcon} 1s forwards 1;
+    `}
 `;

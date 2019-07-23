@@ -1,5 +1,17 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import colors from '../../styles/colors';
+
+const fadeInDown = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const Header = styled.header`
   background: linear-gradient(
@@ -16,6 +28,11 @@ export const Icon = styled.i`
   display: inline-block;
   font-size: 24px;
   margin-right: 16px;
+
+  ${() =>
+    css`
+      animation: ${fadeInDown} 1s forwards 1;
+    `}
 
   svg {
     fill: ${colors.white};
@@ -45,6 +62,11 @@ export const Subtitle = styled.small`
 
 export const Text = styled.div`
   text-align: left;
+
+  ${() =>
+    css`
+      animation: ${fadeInDown} 1s forwards 1;
+    `}
 `;
 
 export const SubmitButton = styled.button.attrs(props => ({
@@ -60,6 +82,11 @@ export const Avatar = styled.div`
   margin-left: auto;
   overflow: hidden;
   width: 32px;
+
+  ${() =>
+    css`
+      animation: ${fadeInDown} 1s forwards 1;
+    `}
 
   @media (min-width: 768px) {
     height: 38px;
